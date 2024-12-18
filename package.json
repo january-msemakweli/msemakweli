@@ -1,0 +1,10 @@
+{
+  "name": "msemakweli-research",
+  "version": "1.0.0",
+  "description": "Msemakweli Research website",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
