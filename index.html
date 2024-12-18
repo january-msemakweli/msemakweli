@@ -137,7 +137,8 @@
                 </p>
                 <input type="text" placeholder="Your Name" required name="name">
                 <input type="email" placeholder="Your Email" required name="email">
-                <input type="tel" placeholder="Phone Number" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <input type="text" placeholder="Phone Number" name="phone">
+                <!-- Changed type="tel" to type="text" and removed the pattern attribute -->
                 <select required name="service">
                     <option value="" disabled selected>Select Service</option>
                     <option value="data-analysis">Data Analysis</option>
