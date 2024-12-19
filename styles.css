@@ -436,7 +436,7 @@ footer {
         color: #333;
         margin: 10px;
         position: relative;
-        top: 34px;
+        top: 0px;
         font-size: 22px;
         cursor: pointer;
     }
@@ -1122,10 +1122,10 @@ body {
     .menu-btn {
         display: block !important;
         position: relative;
-        top: 30px;
+        top: 0px;
         right: 0;
         top: 50%; /* Changed from calc(100% + 5px) to 50% */
-        transform: translateY(-50%);
+        transform: translateY(0%);
         z-index: 1000;
         font-size: 24px;
         cursor: pointer;
