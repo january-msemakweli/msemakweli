@@ -435,6 +435,8 @@ footer {
         display: block;
         color: #333;
         margin: 10px;
+        position: relative;
+        top: 35px;
         font-size: 22px;
         cursor: pointer;
     }
@@ -1119,7 +1121,8 @@ body {
     /* Hamburger Menu Button - Adjusted position */
     .menu-btn {
         display: block !important;
-        position: absolute;
+        position: relative;
+        top: 30px;
         right: 0;
         top: 50%; /* Changed from calc(100% + 5px) to 50% */
         transform: translateY(-50%);
