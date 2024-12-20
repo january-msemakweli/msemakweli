@@ -99,7 +99,7 @@ nav {
 .hero {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(26, 31, 44, 0.85), rgba(72, 84, 97, 0.8)),
+    background-image: linear-gradient(rgba(25, 42, 86, 0.8), rgba(25, 42, 86, 0.8)),
         url('https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg');
     background-position: top center;
     background-size: cover;
@@ -1308,8 +1308,8 @@ body {
 /* Update Mobile Hero Section */
 @media (max-width: 768px) {
     .hero {
-        min-height: 60vh; /* Reduce from 100vh to 60vh */
-        padding: 100px 20px 40px; /* Add padding-top for header space */
+        min-height: 85vh;
+        padding: 100px 20px 40px;
         display: flex;
         align-items: center;
         text-align: center;
@@ -1344,7 +1344,7 @@ body {
 /* Additional adjustment for very small screens */
 @media (max-width: 480px) {
     .hero {
-        min-height: 50vh;
+        min-height: 75vh;
         padding: 80px 15px 30px;
     }
 
