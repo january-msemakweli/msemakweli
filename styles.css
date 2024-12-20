@@ -2124,3 +2124,63 @@ a[title]:hover::after {
         padding: 20px;
     }
 }
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .colleague-card {
+        background: var(--primary-color);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .colleague-details h2 {
+        color: var(--text-light);
+    }
+    
+    .colleague-details h3,
+    .colleague-details h4 {
+        color: #a0a0a0;
+    }
+    
+    .colleague-details p {
+        color: #e0e0e0;
+    }
+    
+    .colleague-social a {
+        color: #a0a0a0;
+    }
+    
+    .colleague-social a:hover {
+        color: var(--accent-color);
+    }
+    
+    /* Overlay dark mode */
+    .colleague-overlay-content {
+        background: var(--primary-color);
+        color: var(--text-light);
+    }
+    
+    .colleague-overlay .colleague-title h2 {
+        color: var(--text-light);
+    }
+    
+    .colleague-overlay .colleague-title h3,
+    .colleague-overlay .colleague-title h4 {
+        color: #a0a0a0;
+    }
+    
+    .colleague-overlay .colleague-bio p {
+        color: #e0e0e0;
+    }
+    
+    .close-overlay {
+        color: #a0a0a0;
+    }
+    
+    .close-overlay:hover {
+        color: var(--text-light);
+    }
+    
+    .share-buttons {
+        border-top-color: #444;
+    }
+}
