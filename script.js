@@ -165,4 +165,49 @@ document.querySelectorAll('.read-more').forEach(button => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all colleague cards and overlays
+    const colleagueCards = document.querySelectorAll('.colleague-card');
+    const overlays = document.querySelectorAll('.colleague-overlay');
+    const closeButtons = document.querySelectorAll('.close-overlay');
+    
+    // Add click event to Read More buttons
+    colleagueCards.forEach((card, index) => {
+        const readMoreBtn = card.querySelector('.read-more-btn');
+        readMoreBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card click event
+            overlays[index].classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    });
+    
+    // Close overlay when clicking close button
+    closeButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            overlays[index].classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    });
+    
+    // Close overlay when clicking outside content
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    // Close overlay with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            overlays.forEach(overlay => {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+    });
+});
   
