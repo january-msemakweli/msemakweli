@@ -2282,3 +2282,25 @@ main {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 }
+
+/* Specific adjustment for Amelia's photo */
+img[alt="Ms. Amelia Chebyala Alfred"].colleague-image {
+    object-position: 50% 15%;
+    object-fit: cover;
+}
+
+img[alt="Ms. Amelia Chebyala Alfred"].colleague-overlay-image {
+    object-position: 50% 15%;
+    object-fit: cover;
+}
+
+/* Specific adjustment for Iddi's photo */
+img[alt="Mr. Iddi Mapande"].colleague-image {
+    object-position: 50% 30%;
+    object-fit: cover;
+}
+
+img[alt="Mr. Iddi Mapande"].colleague-overlay-image {
+    object-position: 50% 30%;
+    object-fit: cover;
+}
