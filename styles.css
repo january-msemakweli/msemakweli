@@ -473,7 +473,7 @@ footer {
 }
 
 .about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
                 url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1920');
     background-size: cover;
     background-position: center;
@@ -2182,5 +2182,70 @@ a[title]:hover::after {
     
     .share-buttons {
         border-top-color: #444;
+    }
+}
+
+/* Colleagues page styling to match shiny-apps */
+.about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about-container {
+    background: var(--bg-light);
+    min-height: 100vh;
+}
+
+.colleague-card {
+    background: var(--bg-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colleague-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode adjustments to match shiny-apps */
+@media (prefers-color-scheme: dark) {
+    .about-container {
+        background: var(--gradient-start);
+    }
+
+    .colleague-card {
+        background: var(--primary-color);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .colleague-card:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .colleague-details h2 {
+        color: var(--text-light);
+    }
+
+    .colleague-details h3,
+    .colleague-details h4 {
+        color: #a0a0a0;
+    }
+
+    .colleague-details p {
+        color: #e0e0e0;
+    }
+
+    .colleague-overlay-content {
+        background: var(--primary-color);
+    }
+
+    .read-more-btn {
+        background: var(--accent-color);
+    }
+
+    .read-more-btn:hover {
+        background: var(--secondary-color);
     }
 }
