@@ -692,6 +692,65 @@ h2 {
     }
 }
 
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #0f111a;         /* Very dark blue */
+        --accent-color: #ff6b81;          /* Soft red */
+        --secondary-color: #70a1ff;       /* Light blue */
+        --highlight-color: #ffd32a;       /* Bright yellow */
+        --text-light: #ffffff;            /* Pure white */
+        --text-dark: #dfe4ea;             /* Light gray */
+        --gradient-start: #0f111a;        /* Very dark blue */
+        --gradient-end: #1e272e;          /* Dark blue-gray */
+        --bg-light: #1e272e;              /* Dark blue-gray */
+        --bg-white: #0f111a;              /* Very dark blue */
+        --card-bg: linear-gradient(145deg, #1e272e, #2f3542);
+    }
+
+    body {
+        background-color: var(--bg-white);
+        color: var(--text-light);
+    }
+
+    .logo h1, .nav-links ul li a {
+        color: var(--text-light);
+    }
+
+    header {
+        background: rgba(15, 17, 26, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    .service-card, .value-item {
+        background: var(--card-bg);
+        color: var(--text-light);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-card p, .value-item p {
+        color: var(--text-light);
+    }
+
+    input, select, textarea {
+        background: var(--primary-color);
+        border-color: var(--secondary-color);
+        color: var(--text-light);
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #888;
+    }
+
+    .portfolio-item {
+        background: var(--primary-color);
+    }
+
+    .about-text p {
+        color: var(--text-light);
+    }
+}
+
 /* Update Section Title Styles */
 .section-title {
     text-align: center;
