@@ -100,7 +100,7 @@ nav {
     min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(25, 42, 86, 0.8), rgba(25, 42, 86, 0.8)),
-        url('https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg');
+        url('images/Hero.png');
     background-position: top center;
     background-size: cover;
     display: flex;
@@ -2303,4 +2303,135 @@ img[alt="Mr. Iddi Mapande"].colleague-image {
 img[alt="Mr. Iddi Mapande"].colleague-overlay-image {
     object-position: 50% 30%;
     object-fit: cover;
+}
+
+/* Testimonials Card Styles */
+.testimonials-card {
+    width: 90%;
+    max-width: 1200px;
+    margin: -30px auto 40px;
+    background: linear-gradient(
+        145deg,
+        #2e86de,
+        #ff4757,
+        #2e86de,
+        #ff4757
+    );
+    background-size: 300% 300%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    height: 180px;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.testimonial-content {
+    text-align: left;
+    flex: 1;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-dot.active {
+    background: white;
+}
+
+/* Mobile adjustments for testimonials */
+@media (max-width: 768px) {
+    .testimonials-card {
+        height: auto;
+        min-height: 220px;
+    }
+
+    .testimonial-slide {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .testimonial-photo {
+        width: 80px;
+        height: 80px;
+        margin: 0 0 15px 0;
+    }
+
+    .testimonial-content {
+        text-align: center;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+.testimonials-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
 }
