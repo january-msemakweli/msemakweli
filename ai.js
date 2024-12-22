@@ -1,5 +1,5 @@
 // Initialize API configuration
-const API_URL = "https://gloria-ai-backend.onrender.com/chat";
+const API_URL = "https://gloria-ai-backend.onrender.com";
 
 // Chat history to maintain context
 let chatHistory = [];
@@ -15,58 +15,56 @@ function addMessage(text, sender) {
     return messageDiv;
 }
 
-// Format chat history for context
-function formatChatHistory() {
-    return chatHistory.map(msg => 
-        `${msg.sender === 'user' ? 'Human' : 'Assistant'}: ${msg.text}`
-    ).join('\n');
-}
-
 // Handle sending message
 async function sendMessage() {
     const userInput = document.getElementById('userInput');
     const message = userInput.value.trim();
     
     if (message) {
-        // Add user message to chat and history
+        // Add user message to chat
         addMessage(message, 'user');
-        chatHistory.push({ sender: 'user', text: message });
         userInput.value = '';
         
         // Show loading indicator
         const loadingMessage = addMessage('...', 'assistant');
         
         try {
-            const response = await fetch(API_URL, {
+            console.log('Sending request to:', `${API_URL}/chat`);
+            
+            const response = await fetch(`${API_URL}/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     message: message,
-                    system_message: "You are Gloria, a friendly and approachable research assistant. You're highly knowledgeable about research methodology, statistical analysis, and data interpretation. However, you're also a master of humor and love making conversations fun. Adapt your tone based on the user's questions. Your nickname is The Research Queen. You also help January G. Msemakweli with online research consultations through his website: https://www.januarymsemakweli.com/",
+                    system_message: "You are Gloria, a friendly and approachable research assistant.",
                     max_tokens: 512,
                     temperature: 0.7,
                     top_p: 0.95
                 })
             });
 
+            console.log('Response status:', response.status);
+            
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                const errorData = await response.text();
+                console.error('Error response:', errorData);
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
 
             const result = await response.json();
+            console.log('Response data:', result);
             
             // Remove loading message
             loadingMessage.remove();
             
-            // Process and add Gloria's response
+            // Add Gloria's response
             const aiResponse = result.response || 'Sorry, I could not generate a response.';
             addMessage(aiResponse, 'assistant');
-            chatHistory.push({ sender: 'assistant', text: aiResponse });
-
+            
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error details:', error);
             loadingMessage.remove();
             addMessage('Sorry, I encountered an error. Please try again.', 'assistant');
         }
@@ -85,6 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('sendButton');
     const userInput = document.getElementById('userInput');
 
+    // Test API connection
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(data => console.log('API Status:', data))
+        .catch(error => console.error('API Error:', error));
+
     // Send button click
     sendButton.addEventListener('click', sendMessage);
 
@@ -102,7 +106,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add initial welcome message
-    const welcomeMessage = "Hello! I'm Gloria, your research assistant. I can help you with research methodology, data analysis, and academic writing. How can I assist you today?";
-    addMessage(welcomeMessage, 'assistant');
-    chatHistory.push({ sender: 'assistant', text: welcomeMessage });
+    addMessage("Hello! I'm Gloria, your research assistant. How can I help you today?", 'assistant');
 }); 
