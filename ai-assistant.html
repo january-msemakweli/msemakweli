@@ -56,33 +56,14 @@
     </section>
 
     <section class="chat-section">
-        <div class="chat-window">
-            <!-- Chat Header -->
-            <div class="chat-header">
-                <div class="chat-title">
-                    <i class="fas fa-robot"></i>
-                    <span>Gloria AI</span>
-                </div>
-            </div>
-            
-            <!-- Chat Messages Area -->
-            <div class="messages" id="chatMessages">
-                <div class="message assistant">
-                    <p>Hello! I'm Gloria, your AI research assistant. How can I help you today?</p>
-                </div>
-            </div>
-            
-            <!-- Chat Input Area -->
-            <div class="input-area">
-                <textarea 
-                    id="userInput" 
-                    placeholder="Type your message here... (Press Enter to send)"
-                    rows="1"
-                ></textarea>
-                <button id="sendButton">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
+        <div class="chat-iframe-container">
+            <iframe 
+                src="https://huggingface.co/spaces/januarymsemakweli/GloriaAI" 
+                frameborder="0"
+                width="100%"
+                height="700px"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+            ></iframe>
         </div>
     </section>
 
