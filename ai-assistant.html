@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ai.css">
 </head>
-</body>
+<body>
     <header>
         <nav>
             <div class="logo">
@@ -39,7 +39,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="ai-assistant.html">Gloria AI</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
@@ -58,11 +58,29 @@
 
     <!-- Remove the chat-section container and directly use chat-window -->
     <div class="chat-window">
-        <iframe
-            src="https://gloriai.netlify.app/"
-            style="border: none; width: 200%; height: 1000px; max-width: 1000px;"
-            title="Gloria AI Chatbot">
-        </iframe>
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i>
+                <h2>Gloria AI</h2>
+            </div>
+            <button id="clearChat" class="clear-chat-btn">
+                <i class="fas fa-trash"></i>
+                Clear Chat
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here dynamically -->
+        </div>
+        <div class="chat-input">
+            <textarea 
+                id="userInput" 
+                placeholder="Type your message here..."
+                rows="1"
+            ></textarea>
+            <button id="sendButton">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
     </div>
 
     <footer>
@@ -92,7 +110,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script src="ai.js"></script>
+    <script src="script.js"></script>
 </body>
 </html> 

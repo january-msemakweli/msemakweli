@@ -248,8 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto advance slides
     setInterval(nextSlide, 5000);
 });
-  
-// Initialize Gloria client
+  // Initialize Gloria client
 let gloriaClient = null;
 
 async function initGloria() {
@@ -266,53 +265,19 @@ function addMessage(text, sender) {
     const messagesDiv = document.getElementById('chatMessages');
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${sender}`;
-    messageDiv.innerHTML = `<p>${text}</p>`;
+    
+    const messageContainer = document.createElement('div');
+    messageContainer.className = 'message-container';
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    contentDiv.textContent = text;
+    
+    messageContainer.appendChild(contentDiv);
+    messageDiv.appendChild(messageContainer);
     messagesDiv.appendChild(messageDiv);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
     return messageDiv;
-}
-
-// Handle sending message
-async function sendMessage() {
-    const userInput = document.getElementById('userInput');
-    const message = userInput.value.trim();
-    
-    if (message) {
-        // Add user message to chat
-        addMessage(message, 'user');
-        userInput.value = '';
-        
-        // Show loading indicator
-        const loadingMessage = addMessage('...', 'assistant');
-        
-        try {
-            if (!gloriaClient) {
-                await initGloria();
-            }
-
-            const result = await gloriaClient.predict(
-                "/chat",
-                {
-                    message: message,
-                    system_message: "You are Gloria, a friendly and approachable research assistant. You're highly knowledgeable about research methodology, statistical analysis, and data interpretation. However, you're also a master of humor and love making conversations fun. Adapt your tone based on the user's questions. You also help January G. Msemakweli with online research consultations through his website: https://www.januarymsemakweli.com/",
-                    max_tokens: 512,
-                    temperature: 0.7,
-                    top_p: 0.95
-                }
-            );
-
-            // Remove loading message
-            loadingMessage.remove();
-            
-            // Add Gloria's response
-            const response = Array.isArray(result.data) ? result.data[0] : result.data;
-            addMessage(response || 'No response received', 'assistant');
-        } catch (error) {
-            console.error('Error:', error);
-            loadingMessage.remove();
-            addMessage('Sorry, I encountered an error. Please try again.', 'assistant');
-        }
-    }
 }
 
 // Event Listeners
