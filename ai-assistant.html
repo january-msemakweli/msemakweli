@@ -58,25 +58,11 @@
 
     <!-- Remove the chat-section container and directly use chat-window -->
     <div class="chat-window">
-        <div class="chat-header">
-            <div class="chat-title">
-                <i class="fas fa-robot"></i>
-                <h2>Gloria AI</h2>
-            </div>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-            <!-- Messages will be added here dynamically -->
-        </div>
-        <div class="chat-input">
-            <textarea 
-                id="userInput" 
-                placeholder="Type your message here..."
-                rows="1"
-            ></textarea>
-            <button id="sendButton">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
+        <iframe
+            src="https://gloriai.netlify.app/"
+            style="border: none; width: 100%; height: 600px; max-width: 800px;"
+            title="Gloria AI Chatbot">
+        </iframe>
     </div>
 
     <footer>
