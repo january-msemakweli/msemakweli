@@ -1,84 +1,50 @@
-// Initialize API configuration
-const BACKEND_URL = "https://gloria-ai.onrender.com";
+let client;
 
-// Chat history to maintain context
-let chatHistory = [];
+async function initClient() {
+    try {
+        client = await window.gradio.client("januarymsemakweli/GloriaAI");
+        console.log("Gradio client initialized");
+        addMessage("Hello! I'm Gloria, your research assistant. How can I help you today?", false);
+    } catch (error) {
+        console.error("Failed to initialize Gradio client:", error);
+    }
+}
 
-// Add message to chat
 function addMessage(content, isUser) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user' : 'assistant'}`;
     messageDiv.innerHTML = `<p>${content}</p>`;
     document.getElementById('chatMessages').appendChild(messageDiv);
-    messageDiv.scrollIntoView({ behavior: 'smooth' });
+    return messageDiv;
 }
 
-// Handle sending message
-async function sendMessage(message) {
+async function handleChat() {
+    const userInput = document.getElementById('userInput');
+    const message = userInput.value.trim();
+    
+    if (!message) return;
+    
+    addMessage(message, true);
+    userInput.value = '';
+    
     try {
-        const response = await fetch(`${BACKEND_URL}/chat`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message })
-        });
-
-        const data = await response.json();
-        if (data.response) {
-            addMessage(data.response, false);
-        } else {
-            throw new Error('Invalid response from server');
-        }
+        const loadingMessage = addMessage("Thinking...", false);
+        const result = await client.predict(message, api_name="/chat");
+        loadingMessage.remove();
+        addMessage(result.data[0], false);
     } catch (error) {
         console.error('Error:', error);
-        addMessage("Sorry, I encountered an error. Please try again.", false);
+        addMessage("I apologize, but I encountered an error. Please try again.", false);
     }
 }
 
-// Auto-resize textarea
-function autoResizeTextarea(element) {
-    element.style.height = 'auto';
-    element.style.height = (element.scrollHeight) + 'px';
-    element.style.height = Math.min(element.scrollHeight, 120) + 'px';
-}
+document.addEventListener('DOMContentLoaded', initClient);
 
-// Event listeners
-document.addEventListener('DOMContentLoaded', () => {
-    const sendButton = document.getElementById('sendButton');
-    const userInput = document.getElementById('userInput');
+document.getElementById('sendButton').addEventListener('click', handleChat);
 
-    // Test API connection
-    fetch(BACKEND_URL)
-        .then(response => response.json())
-        .then(data => console.log('API Status:', data))
-        .catch(error => console.error('API Error:', error));
-
-    // Send button click
-    sendButton.addEventListener('click', async () => {
-        const userInput = document.getElementById('userInput');
-        const message = userInput.value.trim();
-        
-        if (message) {
-            addMessage(message, true);
-            userInput.value = '';
-            await sendMessage(message);
-        }
-    });
-
-    // Enter key press (without Shift)
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            document.getElementById('sendButton').click();
-        }
-    });
-
-    // Auto-resize textarea
-    userInput.addEventListener('input', () => {
-        autoResizeTextarea(userInput);
-    });
-
-    // Add initial welcome message
-    addMessage("Hello! I'm Gloria, your research assistant. How can I help you today?", false);
-}); 
+document.getElementById('userInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        handleChat();
+    }
+});
