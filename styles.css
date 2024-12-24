@@ -2851,3 +2851,55 @@ img[alt="Mr. Iddi Mapande"].colleague-overlay-image {
     color: white;
     margin: 0;
 }
+<style>
+/* Override styles for assistant's messages */
+.message.assistant .message-content {
+    background: #007bff; /* Bright blue */
+    color: #ffffff; /* White text for contrast */
+    border-radius: 16px 16px 16px 4px; /* Rounded corners */
+    text-align: left; /* Left-aligned text */
+}
+
+/* Override styles for user's messages */
+.message.user .message-content {
+    background: #f5f5f5; /* Light gray */
+    color: #000000; /* Black text for readability */
+    border-radius: 16px 16px 4px 16px; /* Rounded corners */
+    text-align: right; /* Right-aligned text */
+}
+
+/* Position messages for assistant (left) */
+.message.assistant {
+    justify-content: flex-start;
+    margin-right: auto; /* Ensure alignment to the left */
+}
+
+/* Position messages for user (right) */
+.message.user {
+    justify-content: flex-end;
+    margin-left: auto; /* Ensure alignment to the right */
+}
+</style>
+.chat-window .chat-messages .message.assistant .message-content {
+    background: #007bff !important;
+    color: #ffffff !important;
+    border-radius: 16px 16px 16px 4px;
+    text-align: left;
+}
+
+.chat-window .chat-messages .message.user .message-content {
+    background: #f5f5f5 !important;
+    color: #000000 !important;
+    border-radius: 16px 16px 4px 16px;
+    text-align: right;
+}
+
+.chat-window .chat-messages .message.assistant {
+    justify-content: flex-start !important;
+    margin-right: auto !important;
+}
+
+.chat-window .chat-messages .message.user {
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+}

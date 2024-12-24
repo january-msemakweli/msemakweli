@@ -1,0 +1,11 @@
+.chat-window .chat-messages .message.assistant .message-content {
+    background: #007bff !important;
+    color: #ffffff !important;
+    border-radius: 16px 16px 16px 4px;
+}
+
+.chat-window .chat-messages .message.user .message-content {
+    background: #f5f5f5 !important;
+    color: #000000 !important;
+    border-radius: 16px 16px 4px 16px;
+}
