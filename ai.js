@@ -1,5 +1,5 @@
 // Base URL for the backend server
-const backendUrl = 'https://gloria-ai.onrender.com';
+const backendUrl = 'https://gloria-ai-january-msemakwelis-projects.vercel.app/';
 
 // Initialize the chatbox with a welcome message
 function initChat() {
