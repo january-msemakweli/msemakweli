@@ -164,39 +164,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Testimonials Slider
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.testimonials-slider');
     const slides = document.querySelectorAll('.testimonial-slide');
     const dotsContainer = document.querySelector('.slider-dots');
     let currentSlide = 0;
 
-    // Create dots
+    // Ensure the required elements are present
+    if (!slider || slides.length === 0 || !dotsContainer) return;
+
+    // Create dots for each slide
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
-        dot.classList.add('slider-dot');
-        if (index === 0) dot.classList.add('active');
+        dot.className = 'slider-dot';
+        if (index === 0) dot.classList.add('active'); // Mark the first dot as active
         dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
     });
 
-    // Initialize first slide
+    // Initialize the first slide as active
     slides[0].classList.add('active');
 
+    // Function to switch slides
     function goToSlide(n) {
+        // Remove active classes from current slide and dot
         slides[currentSlide].classList.remove('active');
-        document.querySelectorAll('.slider-dot')[currentSlide].classList.remove('active');
-        
+        dotsContainer.children[currentSlide].classList.remove('active');
+
+        // Update current slide index
         currentSlide = n;
-        
+
+        // Add active classes to new slide and dot
         slides[currentSlide].classList.add('active');
-        document.querySelectorAll('.slider-dot')[currentSlide].classList.add('active');
+        dotsContainer.children[currentSlide].classList.add('active');
+
+        // Shift the slider to show the active slide
         slider.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
+    // Automatically move to the next slide every 5 seconds
     function nextSlide() {
-        goToSlide((currentSlide + 1) % slides.length);
+        const nextIndex = (currentSlide + 1) % slides.length; // Loop back to the start
+        goToSlide(nextIndex);
     }
 
-    // Auto advance slides
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 5000); // Adjust time interval as needed
 });
