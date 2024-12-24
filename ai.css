@@ -69,7 +69,7 @@
 
 .message-container {
     display: flex;
-    max-width: 100%;
+    max-width: 110%;
 }
 
 /* Assistant message styling */
@@ -126,7 +126,7 @@
 @media (max-width: 768px) {
     .message-content {
         max-width: 97%;
-        font-size: 14px;
+        font-size: 16px;
     }
     
     .message.assistant::before {
