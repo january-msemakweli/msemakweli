@@ -1486,19 +1486,6 @@ a[title]:hover::after {
     padding: 5px;
 }
 
-/* Dark mode adjustments for overlay */
-@media (prefers-color-scheme: dark) {
-    .blog-overlay-content {
-        background: var(--primary-color);
-    }
-
-    .blog-overlay-content h3,
-    .blog-overlay-content p,
-    .close-overlay {
-        color: var(--text-light);
-    }
-}
-
 /* Mobile adjustments for overlay */
 @media (max-width: 768px) {
     .blog-overlay {
@@ -1802,14 +1789,6 @@ a[title]:hover::after {
     line-height: 1.8;
 }
 
-/* Dark mode adjustment */
-@media (prefers-color-scheme: dark) {
-    .colleague-photo,
-    .colleague-image {
-        background: #2a2a2a;
-    }
-}
-
 .colleague-social {
     display: flex;
     justify-content: flex-start;
@@ -1855,13 +1834,6 @@ a[title]:hover::after {
 
 .share-button.linkedin {
     background: #0077b5;
-}
-
-/* Dark mode adjustment */
-@media (prefers-color-scheme: dark) {
-    .share-buttons {
-        border-top-color: #444;
-    }
 }
 
 /* Hide non-LinkedIn buttons on desktop */
