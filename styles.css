@@ -1227,26 +1227,6 @@ a[title]:hover::after {
     }
 }
 
-/* Dark mode adjustments for mobile menu */
-@media (prefers-color-scheme: dark) {
-    .menu-btn {
-        color: var(--text-light); /* White hamburger icon */
-    }
-
-    .nav-links {
-        background: var(--primary-color); /* Dark background for menu */
-    }
-
-    .nav-links ul li a {
-        color: var(--text-light) !important; /* Force white text in menu */
-    }
-
-    /* Ensure hamburger menu is visible in dark mode */
-    .menu-btn i {
-        color: var(--text-light);
-    }
-}
-
 /* Logo styles */
 .logo a {
     text-decoration: none;
@@ -1322,21 +1302,6 @@ a[title]:hover::after {
         padding: 10px 20px;
         display: block;
         color: var(--text-dark) !important; /* Force dark text in light mode */
-    }
-}
-
-/* Dark mode adjustments for mobile menu */
-@media (prefers-color-scheme: dark) {
-    .menu-btn {
-        color: var(--text-light);
-    }
-
-    .nav-links {
-        background: var(--primary-color);
-    }
-
-    .nav-links ul li a {
-        color: var(--text-light) !important; /* Force white text in dark mode */
     }
 }
 
@@ -1428,25 +1393,6 @@ a[title]:hover::after {
 
 .read-more:hover {
     transform: translateX(5px);
-}
-
-/* Dark mode adjustments for blog */
-@media (prefers-color-scheme: dark) {
-    .blog-post {
-        background: var(--primary-color);
-    }
-
-    .blog-post h3 {
-        color: var(--text-light);
-    }
-
-    .blog-post p {
-        color: var(--text-light);
-    }
-
-    .blog-meta {
-        color: var(--secondary-color);
-    }
 }
 
 /* Mobile adjustments for blog */
