@@ -1950,44 +1950,6 @@ a[title]:hover::after {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Dark mode adjustments to match shiny-apps */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(145deg, #1a1f2c, #2c3e50);
-    }
-
-    .about-container {
-        background: transparent;
-    }
-
-    .colleague-card {
-        background: linear-gradient(145deg, #2c3e50, #34495e);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .colleague-card:hover {
-        background: linear-gradient(145deg, #34495e, #2c3e50);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .colleague-overlay-content {
-        background: linear-gradient(145deg, #2c3e50, #34495e);
-    }
-
-    .colleague-details h2 {
-        color: #ecf0f1;
-    }
-
-    .colleague-details h3,
-    .colleague-details h4 {
-        color: #bdc3c7;
-    }
-
-    .colleague-details p {
-        color: #ecf0f1;
-    }
-}
-
 /* Main background for the entire page */
 main {
     background: linear-gradient(145deg, #f5f6fa, #ffffff);
