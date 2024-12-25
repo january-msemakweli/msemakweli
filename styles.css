@@ -2903,3 +2903,30 @@ img[alt="Mr. Iddi Mapande"].colleague-overlay-image {
     justify-content: flex-end !important;
     margin-left: auto !important;
 }
+.colleague-overlay-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh; /* Limit height to 90% of viewport height */
+    border-radius: 12px;
+    position: relative;
+    overflow-y: auto; /* Enable scrolling within the content */
+    padding: 2rem;
+}
+
+.colleague-full-details {
+    padding: 1rem;
+}
+
+.close-overlay {
+    position: sticky;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1rem;
+    color: #333;
+    float: right;
+}
