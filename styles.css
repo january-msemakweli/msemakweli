@@ -1876,19 +1876,6 @@ a[title]:hover::after {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
     
-    .colleague-details h2 {
-        color: var(--text-light);
-    }
-    
-    .colleague-details h3,
-    .colleague-details h4 {
-        color: #a0a0a0;
-    }
-    
-    .colleague-details p {
-        color: #e0e0e0;
-    }
-    
     .colleague-social a {
         color: #a0a0a0;
     }
