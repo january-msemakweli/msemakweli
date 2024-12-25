@@ -815,47 +815,6 @@ body {
     background: var(--bg-white);
 }
 
-/* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--primary-color);
-        color: var(--text-light);
-    }
-
-    .services,
-    .portfolio,
-    .about,
-    .contact {
-        background: var(--bg-light);
-    }
-
-    .service-card {
-        background: var(--card-bg);
-    }
-
-    .portfolio-item {
-        background: var(--primary-color);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .contact-container {
-        background: var(--primary-color);
-        padding: 30px;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Update section colors */
-    .section-title h2 {
-        color: var(--text-light);
-    }
-
-    /* Ensure text is visible */
-    p, h3, h4, h5, h6 {
-        color: var(--text-light);
-    }
-}
-
 /* Logo styling */
 .logo {
     display: flex;
