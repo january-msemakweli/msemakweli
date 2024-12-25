@@ -1884,27 +1884,10 @@ a[title]:hover::after {
         color: var(--accent-color);
     }
     
-    .colleague-overlay .colleague-title h2 {
-        color: var(--text-light);
-    }
-    
-    .colleague-overlay .colleague-title h3,
-    .colleague-overlay .colleague-title h4 {
-        color: #a0a0a0;
-    }
-    
-    .colleague-overlay .colleague-bio p {
-        color: #e0e0e0;
-    }
-    
     .close-overlay {
         color: #a0a0a0;
     }
-    
-    .close-overlay:hover {
-        color: var(--text-light);
-    }
-    
+   
     .share-buttons {
         border-top-color: #444;
     }
