@@ -2083,26 +2083,6 @@ main {
     padding: 40px 20px;
 }
 
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-    main {
-        background: linear-gradient(145deg, #1a1f2c, #2c3e50);
-    }
-
-    body {
-        background: transparent;
-    }
-
-    .about-container {
-        background: transparent;
-    }
-
-    .colleague-card {
-        background: linear-gradient(145deg, #2c3e50, #34495e);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-}
-
 /* Specific adjustment for Amelia's photo */
 img[alt="Ms. Amelia Chebyala Alfred"].colleague-image {
     object-position: 50% 15%;
