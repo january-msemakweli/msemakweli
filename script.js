@@ -44,28 +44,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Update Navbar Background on Scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (isDarkMode) {
-        header.style.background = 'rgba(26, 31, 44, 0.95)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-    }
-});
-
-// Detect Dark Mode Changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    const header = document.querySelector('header');
-    if (e.matches) {
-        header.style.background = 'rgba(26, 31, 44, 0.95)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-    }
-});
-
 // Blog Post Overlay Functionality
 document.querySelectorAll('.read-more').forEach(button => {
     button.addEventListener('click', (e) => {
