@@ -210,3 +210,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(nextSlide, 5000); // Adjust time interval as needed
 });
+// Add this new code for colleagues page functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all read more buttons and overlays
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    const overlays = document.querySelectorAll('.colleague-overlay');
+    const closeButtons = document.querySelectorAll('.close-overlay');
+
+    // Add click event to each read more button
+    readMoreBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            overlays[index].style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when overlay is open
+        });
+    });
+
+    // Add click event to each close button
+    closeButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            overlays[index].style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+    });
+
+    // Close overlay when clicking outside content
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+});
