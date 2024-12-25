@@ -243,13 +243,6 @@ nav {
     bottom: 0;
 }
 
-/* Dark mode adjustment */
-@media (prefers-color-scheme: dark) {
-    .service-card[onclick]::after {
-        background: var(--secondary-color);
-    }
-}
-
 /* Portfolio Section */
 .portfolio {
     padding: 100px 0;
