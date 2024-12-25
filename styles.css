@@ -731,27 +731,6 @@ h2 {
     }
 }
 
-/* Dark mode specific animations */
-@media (prefers-color-scheme: dark) {
-    .service-card:hover, .value-item:hover {
-        box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1);
-        background: linear-gradient(145deg, #2c3e50, #1a1a1a);
-    }
-
-    .portfolio-overlay {
-        background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(44, 62, 80, 0.9));
-    }
-
-    .section-title::after {
-        box-shadow: 0 0 10px var(--accent-color);
-    }
-}
-
-/* Smooth transition for dark mode */
-* {
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-}
-
 /* Enhanced contrast styles */
 .hero-content h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -2085,12 +2064,6 @@ a[title]:hover::after {
     
     .colleague-social a:hover {
         color: var(--accent-color);
-    }
-    
-    /* Overlay dark mode */
-    .colleague-overlay-content {
-        background: var(--primary-color);
-        color: var(--text-light);
     }
     
     .colleague-overlay .colleague-title h2 {
