@@ -46,20 +46,24 @@
     </header>
 
     <section class="shiny-apps">
-        <iframe id="myIframe" src="https://januarymsemakweli.com/notes" frameborder="0" style="width: 100%; overflow: hidden;" scrolling="no"></iframe>
-        <script>
-          document.getElementById("myIframe").onload = function () {
-            const iframe = document.getElementById("myIframe");
-            try {
-              // Adjust the iframe height to match its content
-              iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-            } catch (error) {
-              console.error("Unable to adjust iframe height. Cross-origin restrictions may apply.", error);
-            }
-          };
-        </script>
+        <iframe 
+          id="myIframe" 
+          src="https://januarymsemakweli.com/notes" 
+          frameborder="0" 
+          style="width: 100%; border: none; overflow: hidden;" 
+          scrolling="no">
+        </iframe>
 
-        </div>
+        <script>
+          // Listen for messages from the child iframe
+          window.addEventListener("message", function (event) {
+            // Check if the message contains the iframeHeight
+            if (event.data && event.data.iframeHeight) {
+              const iframe = document.getElementById("myIframe");
+              iframe.style.height = event.data.iframeHeight + "px"; // Adjust the iframe's height
+            }
+          });
+        </script>
     </section>
 
     <footer>
