@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epidemiology and Biostatistics Notes</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <div class="notes-container">
+        <h1 class="title">Epidemiology and Biostatistics Notes</h1>
+        <div class="notes-grid">
+            <div class="note-card">
+                <div class="ppt-icon">
+                    <img src="icons/ppt-icon.png" alt="PPT Icon" class="icon">
+                </div>
+                <h2>Intoduction to Biostatistics</h2>
+                <a href="https://drive.google.com/uc?export=download&id=1S0qJwNt-UsuJS3W8uUJUS426nZJFPAGz" download class="download-btn">Download</a>
+            </div>
+            <div class="note-card">
+                <div class="ppt-icon">
+                    <img src="icons/ppt-icon.png" alt="PPT Icon" class="icon">
+                </div>
+                <h2>Qualitative Data Presentation</h2>
+                <a href="https://drive.google.com/uc?export=download&id=1L7pj8YsR4Gr-tWZcAY4j7d2XpunGolCd" download class="download-btn">Download</a>
+            </div>
+            <div class="note-card">
+                <div class="ppt-icon">
+                    <img src="icons/ppt-icon.png" alt="PPT Icon" class="icon">
+                </div>
+                <h2>Quantitative Data Presentation</h2>
+                <a href="https://drive.google.com/uc?export=download&id=1g7mHyn-6c0J1MKAl0oh9cZn9T4dpjaE_" download class="download-btn">Download</a>
+            </div>            
+            <div class="note-card">
+                <div class="ppt-icon">
+                    <img src="icons/ppt-icon.png" alt="PPT Icon" class="icon">
+                </div>
+                <h2>Measures of Summary and Dispersion</h2>
+                <a href="SUMMARY MEASURES" download class="download-btn">Download</a>
+            </div>      
+            <div class="note-card">
+                <div class="ppt-icon">
+                    <img src="icons/ppt-icon.png" alt="PPT Icon" class="icon">
+                </div>
+                <h2>Lecture 5</h2>
+                <a href="0" download class="download-btn">Download</a>
+            </div>       
+            <div class="note-card">
+                <div class="ppt-icon">
+                    <img src="icons/ppt-icon.png" alt="PPT Icon" class="icon">
+                </div>
+                <h2>Lecture 6</h2>
+                <a href="0" download class="download-btn">Download</a>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+  // Function to send the height of the content to the parent window
+  function sendHeightToParent() {
+    const height = document.body.scrollHeight; // Get the full height of the content
+    window.parent.postMessage({ iframeHeight: height }, "*");
+  }
+
+  // Send the height when the page loads
+  window.addEventListener("load", sendHeightToParent);
+
+  // Optional: Resend the height when the window resizes
+  window.addEventListener("resize", sendHeightToParent);
+</script>
